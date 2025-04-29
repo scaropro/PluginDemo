@@ -1,11 +1,11 @@
 <Project>
-  <Import Project="$(MSBuildThisFileDirectory)Directory.Solution.props"/>
 
   <!-- Build properties -->
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <!-- By default all projects are not packable -->
@@ -18,4 +18,5 @@
     <InternalsVisibleTo Include="DynamicProxyGenAssembly2"/>
   </ItemGroup>
 
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Solution.props"/>
 </Project>

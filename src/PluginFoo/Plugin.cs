@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.DependencyInjection;
+
+using Newtonsoft.Json;
 
 namespace PluginDemo;
 
@@ -12,4 +14,7 @@ public sealed class Plugin : IPlugin
 
     /// <inheritdoc/>
     public Version? NewtonsoftVersion => typeof(JsonConverter).Assembly.GetName().Version;
+
+    /// <inheritdoc/>
+    public Version? DependencyInjectionVersion => typeof(ServiceCollection).Assembly.GetName().Version;
 }

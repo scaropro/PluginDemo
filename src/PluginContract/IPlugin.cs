@@ -14,4 +14,9 @@ public interface IPlugin
     /// Gets the NewtonSoft.Json assembly that the plugin uses.
     /// </summary>
     Version? NewtonsoftVersion { get; }
+
+    /// <summary>
+    /// Gets the Microsoft.Extensions.DependencyInjection assembly that the plugin uses.
+    /// </summary>
+    Version? DependencyInjectionVersion { get; }
 }

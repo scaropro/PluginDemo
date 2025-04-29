@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-using Newtonsoft.Json;
+using Microsoft.Extensions.DependencyInjection;
 
 using PluginDemo;
 
@@ -9,7 +9,11 @@ var pluginsDirectory = Path.Combine(
         throw new InvalidOperationException("Cannot get the main application directory path"),
     "Plugins");
 
-Console.WriteLine($"App: Newtonsoft {typeof(JsonConverter).Assembly.GetName().Version}");
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+Console.WriteLine("Microsoft.Extensions.DependencyInjection version:");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+
+Console.WriteLine($"App: {typeof(ServiceCollection).Assembly.GetName().Version}");
 
 string[] names = ["PluginFoo", "PluginBar"];
 
@@ -22,5 +26,5 @@ var plugins = names.Select(n =>
 
 foreach (var p in plugins)
 {
-    Console.WriteLine($"{p.Name}: Newtonsoft {p.NewtonsoftVersion}");
+    Console.WriteLine($"{p.Name}: {p.DependencyInjectionVersion}");
 }
